@@ -1,38 +1,270 @@
+:root {
+  --sidebar-flex: 1.5;
+  --condiv-flex: 6;
+  --fontsize-p: 1.2rem;
+  --fontsize-nav: 1.6rem;
+  --typing-font: 1.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+
+nav {
+  padding: 60px 30px 0px 30px;
+  flex: var(--sidebar-flex);
+  background: rgb(218, 218, 218);
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  z-index: 10000;
+}
+
+nav ul {
+  font-size: var(--fontsize-nav);
+  text-align: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 40px;
+}
+
+nav ul li a {
+  color: rgb(90, 90, 90);
+  text-decoration: none;
+  animation: appear 2s;
+  transition: all .3s ease-in-out;
+}
+
+@keyframes appear {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 315px;
+  }
+}
+@-moz-keyframes appear {
+  /* Firefox */
+  from {
+    left: -100px;
+  }
+  to {
+    left: 315px;
+  }
+}
+@-webkit-keyframes appear {
+  /* Safari and Chrome */
+  from {
+    left: -100px;
+  }
+  to {
+    left: 315px;
+  }
+}
+@-o-keyframes appear {
+  /* Opera */
+  from {
+    left: -100px;
+  }
+  to {
+    left: 315px;
+  }
+}
+
+nav ul li a:hover {
+  color: rgba(37, 37, 37, 0.212);
+}
+
+.condiv {
+  padding: 100px;
+  background-color: #f4f5f9;
+  flex: var(--condiv-flex);
+  -moz-box-shadow:    inset 7px 0 9px -5px #00000063;
+  -webkit-box-shadow: inset 7px 0 9px -5px #00000063;
+  box-shadow:         inset 7px 0 9px -5px #00000063;
+}
+
+.home {
+  /* display: flex; */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home h2 {
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profilepic {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 250px;
+  margin: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social {
+  /* width: 100vw; */
+  /* position: absolute; */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  bottom: 60px;
+}
+
+.social i {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 110px;
+  font-size: 30px;
+  color: #9a9b9c;
+}
+
+.social i:hover {
+  color: #333
+}
+
+.typingeffect {
+  display: flex;
+  justify-content: center;
+  font-size: var(--typing-font);
+  margin-bottom: 30px;
+}
+
+.about {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.subtopic {
+  margin: 10px 10px 30px 10px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,h3,h4 {
+  margin: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  font-size: var(--fontsize-p);
+}
+
+.widecard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 30px 0px 30px 0;
+  transition: .3s;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.widecard:hover {
+  color: #fff;
+  background: #333;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+.skills ul {
+  display: block;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.skills ul li {
+  list-style: none;
+  padding: 20px 25px;
+}
+
+.active {
+  font-weight: bolder;
+}
+
+.codewars {
+  display: flex;
+  background-color: #333;
+  padding: 40px 60px 15px 60px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.git-stats {
+  display: flex;
+  background-color: #333;
+  padding: 20px 60px;
+}
+
+.skill-name {
+  margin-bottom: 8px;
+}
+
+.contact-a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-a:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-box {
+  padding: 30px;
+  display: block;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.certs-details {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px; */
+  background-color: #333;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.certs-details img {
+  padding-bottom: 15px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.certs-details h4 {
+  padding-top: 15px;
+  color: white;
+  text-align: center;
+}
+
+.certs-details p {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
 }
